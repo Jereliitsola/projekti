@@ -1,0 +1,19 @@
+# WARNING! Changes made WILL be overwritten automatically!
+
+# Omat muutokset
+
+Banner /etc/ssh/banner
+Port 5222
+AllowUsers debianjere jereliitsola
+PermitRootLogin no
+
+Include /etc/ssh/sshd_config.d/*.conf
+
+#Default
+PasswordAuthentication yes
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem        sftp     /user/lib/openssh/sftp-server
