@@ -17,7 +17,7 @@ InstallPrograms:
 
 /usr/lib/libreoffice/share/template/common/presnt/:
   file.recurse:
-    - source: salt://projekti/sshd_config
+    - source: salt://projekti/templates/
     
 # SSHD- Asetukset
 
