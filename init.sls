@@ -1,4 +1,4 @@
-# Firefox,libreoffice,tree sekä ssh asennus.
+# Firefox,libreoffice,tree, vlc sekä ssh asennus.
 
 InstallPrograms:
   pkg.installed:
