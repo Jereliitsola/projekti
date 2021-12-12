@@ -1,19 +1,32 @@
-# Firefox,libreoffice,tree, vlc sekä ssh asennus.
+# LibreOffice,tree,vlc sekä ssh asennus.
 
 InstallPrograms:
   pkg.installed:
     - pkgs:
-      - firefox-esr
       - libreoffice
       - tree
       - vlc
       - openssh-server
       
+# Google Chromen asentaminen Linux käyttöjärjestelmälle
+
+google_chrome_repository:
+  pkgrepo.managed:
+    - humanname: Google Chrome
+    - name: deb http://dl.google.com/linux/chrome/deb/ stable main
+    - dist: stable
+    - file: /etc/apt/sources.list.d/chrome-browser.list
+    - gpgcheck: 1
+    - key_url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+google-chrome-stable:
+  pkg.installed:
+    - require:
+      - pkgrepo: google_chrome_repository
+
+
 # LIBREOFFICE- ASETUKSET
 # Templatejen valmiiksi asettaminen libreofficeen.
-
-#/projekti/templates/ kansiion asetetut lisätään
-# automaattisesti LibreOfficeen.
 
 /usr/lib/libreoffice/share/template/common/presnt/:
   file.recurse:
